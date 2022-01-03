@@ -1,5 +1,9 @@
-all:
-	gcc main.c strrev_norm.c -o main
 
-clear:
-	rm main
+all: clear build
+	./main
+
+build:
+	gcc main.c db_putnbr.c -o main
+
+clean:
+	rm -f main

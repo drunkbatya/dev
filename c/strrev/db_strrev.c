@@ -1,19 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:44 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/03 15:16:45 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/03 15:52:38 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/03 15:52:42 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "putnbr.h"
+#include <unistd.h>
+#include "strrev.h"
 
-int	main(void)
+int	db_getsize(char *array)
 {
-	db_putnbr(-123);
-	return (0);
+	int	size;
+
+	size = 0;
+	while (array[size] != 0)
+	{
+		size++;
+	}
+	return (size);
+}
+
+char	*db_strrev(char *array)
+{
+	int	end;
+	int	start;
+	int	temp;
+
+	start = 0;
+	end = db_getsize(array) - 1;
+	while (start < end)
+	{
+		temp = array[end];
+		array[end] = array[start];
+		array[start] = temp;
+		end--;
+		start++;
+	}
+	return (array);
 }

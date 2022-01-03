@@ -5,5 +5,5 @@ all: clear build
 build:
 	gcc main.c putnbr.c -o main
 
-clear:
+clean:
 	rm -f main
