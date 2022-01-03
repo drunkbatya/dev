@@ -1,0 +1,1 @@
+void putnbr(int nb);
