@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:44 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/06 12:43:21 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 12:30:59 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 12:31:50 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "db_putnbr.h"
+#include <unistd.h>
 
-int	main(void)
+void	db_putchar(char c)
 {
-	db_putnbr(-123);
-	return (0);
+	write(1, &c, 1);
 }

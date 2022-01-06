@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:44 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/06 12:43:21 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 12:26:34 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 12:45:29 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "db_putnbr.h"
+#include "db_strlen.h"
+#include <unistd.h>
+#include "../putnbr/db_putnbr.h"
 
 int	main(void)
 {
-	db_putnbr(-123);
+	db_putnbr(db_strlen("Bitch"));
 	return (0);
 }

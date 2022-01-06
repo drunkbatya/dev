@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:44 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/06 12:43:21 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 12:24:29 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 12:52:06 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "db_putnbr.h"
-
-int	main(void)
+int	db_strlen(char *str)
 {
-	db_putnbr(-123);
-	return (0);
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }

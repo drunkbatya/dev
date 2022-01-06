@@ -6,7 +6,7 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 19:50:21 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/05 20:17:50 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/06 12:54:04 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	db_putstr(char *str)
 	int	count;
 
 	count = 0;
-	while (*(str + count) != '\0')
-		db_putchar(*(str + count++));
+	while (str[count] != '\0')
+		db_putchar(str[count++]);
 }

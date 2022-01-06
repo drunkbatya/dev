@@ -6,17 +6,13 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:34:35 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/04 16:35:54 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/06 12:36:52 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "db_ft.h"
-
-void	db_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "../putchar/db_putchar.h"
 
 void	db_putnbr(int nb)
 {

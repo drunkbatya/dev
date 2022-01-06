@@ -1,7 +1,7 @@
 all: build run clean
 
 build:
-	gcc main.c db_ft_ultimate.c -o db_ft_ultimate
+	gcc main.c db_ft_ultimate.c ../putnbr/db_putnbr.c ../putchar/db_putchar.c -o db_ft_ultimate
 
 run:
 	./db_ft_ultimate

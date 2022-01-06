@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_putchar.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:44 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/06 12:43:21 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 12:32:40 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 12:33:15 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "db_putnbr.h"
+#ifndef DB_PUTCHAR_H
+# define DB_PUTCHAR_H
 
-int	main(void)
-{
-	db_putnbr(-123);
-	return (0);
-}
+void	db_putchar(char c);
+#endif

@@ -1,9 +1,11 @@
 
-all: clear build
-	./main
+all: build run clean
+
+run:
+	./db_putnbr
 
 build:
-	gcc main.c putnbr.c -o main
+	gcc main.c db_putnbr.c ../putchar/db_putchar.c -o db_putnbr
 
 clean:
-	rm -f main
+	rm -f ./db_putnbr
