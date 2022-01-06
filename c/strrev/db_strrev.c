@@ -6,22 +6,20 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:52:38 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/03 15:52:42 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/06 13:12:56 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "strrev.h"
+#include "db_strrev.h"
 
 int	db_getsize(char *array)
 {
 	int	size;
 
 	size = 0;
-	while (array[size] != 0)
-	{
+	while (array[size] != '\0')
 		size++;
-	}
 	return (size);
 }
 

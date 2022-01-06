@@ -1,5 +1,6 @@
-count1:
-	gcc count1.c -o count1
+build:
+	gcc count1.c ../getchar/db_getchar.c -o count1
+
 
 clean:
-	rm -r count1
+	rm -f count1

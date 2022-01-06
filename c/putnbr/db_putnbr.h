@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnbr.h                                           :+:      :+:    :+:   */
+/*   db_putnbr.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 15:16:31 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/06 12:28:31 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 13:01:35 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 13:01:44 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUTNBR_H
-# define PUTNBR_H
+#ifndef DB_PUTNBR_H
+# define DB_PUTNBR_H
 
 void	db_putnbr(int nb);
 #endif
