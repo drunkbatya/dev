@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/08 13:34:25 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/08 13:10:34 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/08 14:25:12 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../putnbr/db_putnbr.h"
 #include "../putchar/db_putchar.h"
+#include "db_sort_int_tab.h"
+#define SIZE 12
 
-void	db_putnbr(int nb)
+int	main(void)
 {
-	if (nb < 0)
+	int	arr[SIZE] = {32, 16, 24, 33, 1008, 65, 59, 63, 76, 81, 99, 120};
+	int	count;
+
+	count = 0;
+	while (count < SIZE)
 	{
-		nb = -nb;
-		db_putchar('-');
+		db_putnbr(arr[count++]);
+		db_putchar(' ');
 	}
-	if (nb < 10)
+	db_putchar('\n');
+	db_sort_int_tab(arr, SIZE);
+	count = 0;
+	while (count < SIZE)
 	{
-		db_putchar('0' + nb);
+		db_putnbr(arr[count++]);
+		db_putchar(' ');
 	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	db_putchar('\n');
+	return (0);
 }

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   db_div_mod_ultimate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/08 13:34:25 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/08 12:31:31 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/08 13:03:33 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
-
-void	db_putnbr(int nb)
+void	db_div_mod_ultimate(int *a, int *b)
 {
-	if (nb < 0)
-	{
-		nb = -nb;
-		db_putchar('-');
-	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	int	a_temp;
+
+	a_temp = *a;
+	*a = *a / *b;
+	*b = a_temp % *b;
 }

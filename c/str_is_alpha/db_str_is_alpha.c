@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   db_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/08 13:34:25 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/09 13:03:57 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/09 13:41:48 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
-
-void	db_putnbr(int nb)
+int	db_str_is_alpha(char *str)
 {
-	if (nb < 0)
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
 	{
-		nb = -nb;
-		db_putchar('-');
+		if (str[count] < 'A' || str[count] > 'z')
+			return (0);
+		if (str[count] > 'Z' && str[count] < 'a')
+			return (0);
+		count++;
 	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	return (1);
 }

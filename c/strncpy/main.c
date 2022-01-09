@@ -5,27 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 17:09:28 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/09 13:07:14 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/08 15:09:07 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/09 13:00:11 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include "../getchar/db_getchar.h"
+#include "db_strncpy.h"
+#include "../putstr/db_putstr.h"
+#include "../putnbr/db_putnbr.h"
 
 int	main(void)
 {
-	int	intt;
-	int	*ptr;
+	int		count;
+	char	str[100] = "Testiqqqqqqq";
+	char	str2[108] = "123456789";
 
-	ptr = &intt;
-	intt = 46;
-	printf("*ptr = %d\n", *ptr);
-	*ptr = 54;
-	printf("intt = %d\n", intt);
-	*ptr = *ptr / 2;
-	printf("intt = %d\n", intt);
-	printf("a: %d, z: %d, A: %d, Z: %d\n", 'a', 'z', 'A', 'Z');
+	count = 0;
+	db_putstr(str);
+	db_putstr(" ");
+	db_putstr(str2);
+	db_putstr("\n");
+	db_strncpy(str2, str, 4);
+	db_putstr(str);
+	db_putstr(" ");
+	db_putstr(str2);
+	db_putstr("\n");
+	db_putstr(db_strncpy(str2, "Eb\n", 6));
+	while (count < 10)
+	{
+		db_putnbr(str2[count++]);
+		db_putstr(" ");
+	}
+	db_putstr("\n");
 	return (0);
 }

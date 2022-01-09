@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   db_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/08 13:34:25 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/09 13:37:32 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/09 14:08:25 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
-
-void	db_putnbr(int nb)
+int	db_str_is_numeric(char *str)
 {
-	if (nb < 0)
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
 	{
-		nb = -nb;
-		db_putchar('-');
+		if (str[count] < '0' || str[count] > '9')
+			return (0);
+		count++;
 	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	return (1);
 }

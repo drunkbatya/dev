@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/08 13:34:25 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/08 15:09:07 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/08 15:30:36 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
+#include "db_strcpy.h"
+#include "../putstr/db_putstr.h"
 
-void	db_putnbr(int nb)
+int	main(void)
 {
-	if (nb < 0)
-	{
-		nb = -nb;
-		db_putchar('-');
-	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	char	str[100] = "Testiqqqqqqq";
+	char	str2[108] = "123";
+
+	db_putstr(str);
+	db_putstr(" ");
+	db_putstr(str2);
+	db_putstr("\n");
+	db_strcpy(str2, str);
+	db_putstr(str);
+	db_putstr(" ");
+	db_putstr(str2);
+	db_putstr("\n");
+	db_putstr(db_strcpy(str2, "Ebbbbaaad\n"));
+	return (0);
 }
