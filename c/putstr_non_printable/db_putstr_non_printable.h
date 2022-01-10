@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_putstr_non_printable.h                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 17:09:28 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/10 15:04:50 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/10 13:13:28 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/10 13:14:06 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include "../getchar/db_getchar.h"
+#ifndef DB_PUTSTR_NON_PRINTABLE_H
+# define DB_PUTSTR_NON_PRINTABLE_H
 
-int	main(void)
-{
-	int		intt;
-	int		*adr;
-	void		*addr;
-
-	intt = 46;
-	addr = &intt;
-        adr = (int *)addr;
-	printf("Size of ptr: %ld\n", sizeof(adr));
-	printf("Value: %d\n", *adr);
-	printf("Address: %lu\n", (unsigned long)&adr);
-	printf("Address: %lu\n", (unsigned long)&adr);
-	printf("Address HEX: %p\n", &adr);
-	return (0);
-}
+void	db_putstr_non_printable(char *str);
+#endif

@@ -5,28 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 17:09:28 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/10 15:04:50 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/10 14:12:29 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/10 14:21:07 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include "../getchar/db_getchar.h"
+#include "db_print_memory.h"
 
 int	main(void)
 {
-	int		intt;
-	int		*adr;
-	void		*addr;
+	int	*nptr;
+	int	num;
 
-	intt = 46;
-	addr = &intt;
-        adr = (int *)addr;
-	printf("Size of ptr: %ld\n", sizeof(adr));
-	printf("Value: %d\n", *adr);
-	printf("Address: %lu\n", (unsigned long)&adr);
-	printf("Address: %lu\n", (unsigned long)&adr);
-	printf("Address HEX: %p\n", &adr);
+	num = 10;
+	nptr = &num;
+	db_print_memory(nptr, 1);
 	return (0);
 }
