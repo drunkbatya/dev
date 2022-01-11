@@ -6,11 +6,12 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:49:24 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/10 20:21:26 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/11 15:43:30 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unistd.h"
+#include <stdio.h>
 
 void	db_putchar(char c)
 {
@@ -19,21 +20,20 @@ void	db_putchar(char c)
 
 void	db_puthex_from_dec(long nb)
 {
-	int		offset;
-	long	su;
+	int	offset;
+	printf("Current nb: %ld\n", nb);
 
 	offset = 10;
 	if (nb < 10)
 	{
 		db_putchar('0' + nb);
 	}
-	else if (nb >= 10 && nb <= 16)
+	else if (nb >= 10 && nb < 16)
 		db_putchar('a' - offset + nb);
-	else if ((nb / 16) != 0)
+	else
 	{
-		su = nb % 16;
-		nb = nb / 16;
-		db_puthex_from_dec(nb);
-		db_puthex_from_dec(su);
+		db_putchar('0');
+		db_puthex_from_dec(nb / 16);
+		db_puthex_from_dec(nb % 16);
 	}
 }

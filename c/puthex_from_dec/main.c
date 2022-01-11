@@ -6,7 +6,7 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:59:58 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/10 20:19:02 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/11 15:28:14 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "db_puthex_from_dec.h"
@@ -14,8 +14,11 @@
 int	main(void)
 {
 	long	num;
+	int	var;
 
-	num = 9988771244;
+	//num = 140729887526216;
+	num = 4464189248;
+	//var = 10;
 	db_puthex_from_dec(num);
 	return (0);
 }
