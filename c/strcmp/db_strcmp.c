@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   db_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 14:54:22 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 14:37:54 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/12 14:47:25 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
-
-void	db_putchar(char c)
+int	db_strcmp(char	*s1, char *s2)
 {
-	write(1, &c, 1);
-}
+	int	count;
 
-void	db_putnbr(int nb)
-{
-	if (nb < 0)
+	count = 0;
+	while (s1[count] != '\0')
 	{
-		nb = -nb;
-		db_putchar('-');
+		if (s1[count] > s2[count])
+			return (1);
+		if (s2[count] > s1[count])
+			return (-1);
+		count++;
 	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	return (0);
 }

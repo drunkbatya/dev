@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 13:34:23 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 14:54:22 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 14:48:39 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/12 14:56:02 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "../putchar/db_putchar.h"
+#include "db_strcmp.h"
+#include "../putnbr/db_putnbr.h"
+#include "../strcpy/db_strcpy.h"
 
-void	db_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
-}
+	char	str1[100];
+	char	str2[100];
 
-void	db_putnbr(int nb)
-{
-	if (nb < 0)
-	{
-		nb = -nb;
-		db_putchar('-');
-	}
-	if (nb < 10)
-	{
-		db_putchar('0' + nb);
-	}
-	else
-	{
-		db_putnbr(nb / 10);
-		db_putnbr(nb % 10);
-	}
+	db_strcpy(str1, "qwErty");
+	db_strcpy(str2, "qwrty");
+	db_putnbr(db_strcmp(str1, str2));
+	return (0);
 }

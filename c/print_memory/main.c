@@ -6,19 +6,20 @@
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:12:29 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/11 15:58:32 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/12 14:11:57 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "db_print_memory.h"
+#include "../strcpy/db_strcpy.h"
 
 int	main(void)
 {
-	int	*nptr;
-	int	num;
+	char	arr[100];
+	char	*addr;
 
-	num = 10;
-	nptr = &num;
-	db_print_memory(nptr, 2);
+	addr = &arr[0];
+	db_strcpy(addr, "Testingwordmfck");
+	db_print_memory(addr, 1);
 	return (0);
 }
