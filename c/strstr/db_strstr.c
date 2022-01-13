@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_strcat.c                                        :+:      :+:    :+:   */
+/*   db_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 18:03:17 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 17:52:19 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 18:01:23 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/13 14:48:48 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,30 @@ int	db_strlen(char *str)
 	return (count);
 }
 
-char	*db_strcat(char *dest, char *src)
+char	*db_strstr(char *str, char *to_find)
 {
 	int	count;
-	int	dest_len;
+	int	count2;
+	int	countf;
+	int	found_len;
+	int	to_find_len;
 
 	count = 0;
-	dest_len = db_strlen(dest);
-	while (src[count] != '\0')
+	to_find_len = db_strlen(to_find);
+	while (str[count] != '\0')
 	{
-		dest[dest_len + count] = src[count];
+		countf = 0;
+		found_len = 0;
+		count2 = count;
+		while (str[count2] == to_find[countf])
+		{
+			found_len++;
+			count2++;
+			countf++;
+		}
+		if (found_len == to_find_len)
+			return (str + count);
 		count++;
 	}
-	dest[dest_len + count] = '\0';
-	return (dest);
+	return ((char *)0);
 }

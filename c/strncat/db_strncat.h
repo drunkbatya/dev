@@ -1,37 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_strcat.c                                        :+:      :+:    :+:   */
+/*   db_strncat.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 18:03:17 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 17:52:19 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 17:45:11 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/12 17:56:00 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	db_strlen(char *str)
-{
-	int	count;
+#ifndef DB_STRNCAT_H
+# define DB_STRNCAT_H
 
-	count = 0;
-	while (str[count] != '\0')
-		count++;
-	return (count);
-}
-
-char	*db_strcat(char *dest, char *src)
-{
-	int	count;
-	int	dest_len;
-
-	count = 0;
-	dest_len = db_strlen(dest);
-	while (src[count] != '\0')
-	{
-		dest[dest_len + count] = src[count];
-		count++;
-	}
-	dest[dest_len + count] = '\0';
-	return (dest);
-}
+char	*db_strncat(char *dest, char *src, unsigned int n);
+#endif

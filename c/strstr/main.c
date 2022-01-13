@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_strcat.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 18:03:17 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 17:52:19 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 18:09:50 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/13 14:49:00 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	db_strlen(char *str)
+#include "db_strstr.h"
+#include "../putstr/db_putstr.h"
+#include "../strcpy/db_strcpy.h"
+
+int	main(void)
 {
-	int	count;
+	char	str1[100];
+	char	str2[100];
+	char	*res;
 
-	count = 0;
-	while (str[count] != '\0')
-		count++;
-	return (count);
-}
-
-char	*db_strcat(char *dest, char *src)
-{
-	int	count;
-	int	dest_len;
-
-	count = 0;
-	dest_len = db_strlen(dest);
-	while (src[count] != '\0')
-	{
-		dest[dest_len + count] = src[count];
-		count++;
-	}
-	dest[dest_len + count] = '\0';
-	return (dest);
+	db_putstr(db_strcpy(str1, "Test string strahh ddssss"));
+	db_putstr("\n");
+	db_putstr(db_strcpy(str2, "stra"));
+	db_putstr("\n");
+	res = db_strstr(str1, str2);
+	if (res)
+		db_putstr(res);
+	else
+		db_putstr("Null");
+	db_putstr("\n");
+	return (0);
 }

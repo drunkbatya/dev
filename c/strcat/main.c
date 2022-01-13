@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_strcat.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 18:03:17 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/12 17:52:19 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 17:45:46 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/12 17:51:29 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	db_strlen(char *str)
+#include "db_strcat.h"
+#include "../strcpy/db_strcpy.h"
+#include "../putstr/db_putstr.h"
+
+int	main(void)
 {
-	int	count;
+	char	str1[100];
+	char	str2[100];
 
-	count = 0;
-	while (str[count] != '\0')
-		count++;
-	return (count);
-}
-
-char	*db_strcat(char *dest, char *src)
-{
-	int	count;
-	int	dest_len;
-
-	count = 0;
-	dest_len = db_strlen(dest);
-	while (src[count] != '\0')
-	{
-		dest[dest_len + count] = src[count];
-		count++;
-	}
-	dest[dest_len + count] = '\0';
-	return (dest);
+	db_putstr(db_strcpy(str1, "Test string!"));
+	db_putstr("\n");
+	db_putstr(db_strcpy(str2, "Second mthfc string.."));
+	db_putstr("\n");
+	db_putstr(db_strcat(str2, str1));
+	db_putstr("\n");
+	return (0);
 }
