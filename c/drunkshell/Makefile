@@ -1,7 +1,7 @@
 all: build run clean
 
 build:
-	gcc main.c functions.c -o drunkshell
+	gcc main.c drunkshell.c commands.c -L../libdrunk -ldrunk -o drunkshell
 
 run:
 	./drunkshell

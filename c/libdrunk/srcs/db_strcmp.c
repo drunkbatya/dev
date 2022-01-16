@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 19:03:42 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/16 13:44:49 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/12 14:37:54 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/12 14:47:25 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "drunkshell.h"
-#include "colors.h"
-
-int	main(void)
+int	db_strcmp(char	*s1, char *s2)
 {
-	char	buf[100];
+	int	count;
 
-	while (buf[0] != EOF)
+	count = 0;
+	while (s1[count] != '\0')
 	{
-		db_putstr("DrunkShell :-( ");
-		db_getstr(buf);
-		drunkshell_parsecmd(buf);
+		if (s1[count] > s2[count])
+			return (1);
+		if (s2[count] > s1[count])
+			return (-1);
+		count++;
 	}
-	if (buf[0] == EOF)
-		db_putstr("\033[0;33m\nSee U later :-)"NC"\n");
 	return (0);
 }

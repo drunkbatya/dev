@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   db_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 19:03:42 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/16 13:44:49 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/06 12:24:29 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/06 12:52:06 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "drunkshell.h"
-#include "colors.h"
-
-int	main(void)
+int	db_strlen(char *str)
 {
-	char	buf[100];
+	int	count;
 
-	while (buf[0] != EOF)
-	{
-		db_putstr("DrunkShell :-( ");
-		db_getstr(buf);
-		drunkshell_parsecmd(buf);
-	}
-	if (buf[0] == EOF)
-		db_putstr("\033[0;33m\nSee U later :-)"NC"\n");
-	return (0);
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }

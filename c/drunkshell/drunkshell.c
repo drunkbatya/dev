@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   drunkshell.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 19:03:42 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/16 13:44:49 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/16 13:50:21 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libdrunk/includes/libdrunk.h"
-#include "drunkshell.h"
-#include "colors.h"
+#include "commands.h"
 
-int	main(void)
+int	drunkshell_parsecmd(char *buf)
 {
-	char	buf[100];
-
-	while (buf[0] != EOF)
+	if (db_strcmp(buf, "test\n") == 0)
+		drunkshell_test();
+	else if (db_strlen(buf) != 1)
 	{
-		db_putstr("DrunkShell :-( ");
-		db_getstr(buf);
-		drunkshell_parsecmd(buf);
+		drunkshell_unknown();
+		return (1);
 	}
-	if (buf[0] == EOF)
-		db_putstr("\033[0;33m\nSee U later :-)"NC"\n");
 	return (0);
 }
