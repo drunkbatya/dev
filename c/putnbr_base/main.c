@@ -5,20 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 19:59:58 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/11 15:28:14 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/18 14:11:04 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/18 17:46:02 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "db_puthex_from_dec.h"
+
+#include "db_putnbr_base.h"
 
 int	main(void)
 {
-	long	num;
-	int	var;
-
-	//num = 140729887526216;
-	num = 4464189248;
-	//var = 10;
-	db_puthex_from_dec(num);
+	db_putnbr_base(235, "0123456789");
+	db_putchar('\n');
+	db_putnbr_base(235, "0123456789ABCDEF");
+	db_putchar('\n');
+	db_putnbr_base(235, "01");
+	db_putchar('\n');
+	db_putnbr_base(235, "poneyvif");
+	db_putchar('\n');
+	db_putnbr_base(-235, "poneyvif");
+	db_putchar('\n');
+	db_putnbr_base(235, "poneyvif1");
+	db_putnbr_base(235, "");
+	db_putnbr_base(235, "01123456789");
 	return (0);
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunklib.h                                         :+:      :+:    :+:   */
+/*   libdrunk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
+/*   By: drunkbatya <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 12:38:37 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/16 12:42:46 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/18 11:30:59 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/18 11:31:13 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRUNKLIB_H
-# define DRUNKLIB_H
+#ifndef LIBDRUNK_H
+# define LIBDRUNK_H
 
 int		db_strcmp(char	*s1, char *s2);
 int		db_strlen(char *str);

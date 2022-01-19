@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   db_puthex_from_dec.h                               :+:      :+:    :+:   */
+/*   db_atoi_base.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 19:58:46 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/10 19:59:30 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/19 16:00:28 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/19 16:01:08 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DB_PUTHEX_FROM_DEC_H
-# define DB_PUTHEX_FROM_DEC_H
+#ifndef DB_ATOI_BASE_H
+# define DB_ATOI_BASE_H
 
-void	db_puthex_from_dec(long nb);
+int	db_atoi_base(char *str, char *base);
 #endif
