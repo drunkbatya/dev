@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   db_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/27 12:24:36 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/27 12:39:59 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
-
-int	drunkshell_parsecmd(char *buf)
+int	db_sqrt(int nb)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
-	{
-		drunkshell_unknown();
+	int	num;
+
+	num = 2;
+	if (nb == 1)
 		return (1);
+	while (nb >= (num * num))
+	{
+		if (nb == (num * num))
+			return (num);
+		num++;
 	}
 	return (0);
-}
-
-void	drunkshell_exec(char *buf)
-{
-	execlp(buf, "", NULL);
-	return;
 }

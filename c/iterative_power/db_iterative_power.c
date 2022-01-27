@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   db_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/24 21:03:58 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/24 21:19:29 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
-
-int	drunkshell_parsecmd(char *buf)
+int	db_iterative_power(int nb, int power)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
-	{
-		drunkshell_unknown();
+	int	res;
+
+	if (nb == 0 & power == 0)
 		return (1);
+	if (power < 0)
+		return (0);
+	res = nb;
+	while (power - 1)
+	{
+		res = res * nb;
+		power--;
 	}
-	return (0);
-}
-
-void	drunkshell_exec(char *buf)
-{
-	execlp(buf, "", NULL);
-	return;
+	return (res);
 }

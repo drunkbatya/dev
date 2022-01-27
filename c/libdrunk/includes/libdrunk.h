@@ -6,7 +6,7 @@
 /*   By: drunkbatya <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:30:59 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/18 11:31:13 by drunkbaty        ###   ########.fr       */
+/*   Updated: 2022/01/24 10:28:01 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ char	db_getchar(void);
 char	*db_getstr(char *buf);
 void	db_putstr(char *str);
 void	db_swap(int *a, int *b);
+void	db_strnlcut(char *str);
 #endif

@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   db_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/24 19:32:10 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/24 20:55:12 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
-
-int	drunkshell_parsecmd(char *buf)
+int	db_recursive_factorial(int nb)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
-	{
-		drunkshell_unknown();
+	if (nb <= 0)
+		return (0);
+	else if (nb == 1)
 		return (1);
-	}
-	return (0);
-}
-
-void	drunkshell_exec(char *buf)
-{
-	execlp(buf, "", NULL);
-	return;
+	return (nb * db_recursive_factorial(nb - 1));
 }

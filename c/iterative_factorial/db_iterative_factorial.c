@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   db_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/24 19:32:10 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/24 19:59:23 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
-
-int	drunkshell_parsecmd(char *buf)
+int	db_iterative_factorial(int nb)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
+	int	count;
+	int	res;
+
+	if (nb < 0)
+		return (0);
+	count = nb;
+	res = 1;
+	while (count)
 	{
-		drunkshell_unknown();
-		return (1);
+		res = res * count;
+		count--;
 	}
-	return (0);
-}
-
-void	drunkshell_exec(char *buf)
-{
-	execlp(buf, "", NULL);
-	return;
+	return (res);
 }

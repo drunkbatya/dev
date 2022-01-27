@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/27 11:30:19 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/27 12:15:04 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
+#include "db_fibonacci.h"
+#include "../putnbr/db_putnbr.h"
+#include <unistd.h>
 
-int	drunkshell_parsecmd(char *buf)
+void	db_putchar_local(char c)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
-	{
-		drunkshell_unknown();
-		return (1);
-	}
-	return (0);
+	write(1, &c, 1);
 }
 
-void	drunkshell_exec(char *buf)
+int	main(void)
 {
-	execlp(buf, "", NULL);
-	return;
+	int	num;
+
+	num = 40;
+	db_putnbr(db_fibonacci_it(num));
+	db_putchar_local('\n');
+	db_putnbr(db_fibonacci(num));
+	return (0);
 }

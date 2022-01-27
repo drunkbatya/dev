@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drunkshell.c                                       :+:      :+:    :+:   */
+/*   db_strnlcut.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:37:14 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/01/24 10:36:56 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/01/24 10:24:33 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/01/24 10:28:19 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libdrunk/includes/libdrunk.h"
-#include "commands.h"
-#include "unistd.h"
-
-int	drunkshell_parsecmd(char *buf)
+void	db_strnlcut(char *str)
 {
-	if (db_strcmp(buf, "test\n") == 0)
-		drunkshell_test();
-	else if (db_strlen(buf) != 1)
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
 	{
-		drunkshell_unknown();
-		return (1);
+		if (str[count] == '\n')
+			str[count] = '\0';
+		count++;
 	}
-	return (0);
-}
-
-void	drunkshell_exec(char *buf)
-{
-	execlp(buf, "", NULL);
-	return;
 }
