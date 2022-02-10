@@ -5,37 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: drunkbatya <drunkbatya.js@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 17:09:28 by drunkbaty         #+#    #+#             */
-/*   Updated: 2022/02/09 19:34:45 by drunkbaty        ###   ########.fr       */
+/*   Created: 2022/02/10 17:09:01 by drunkbaty         #+#    #+#             */
+/*   Updated: 2022/02/10 19:38:05 by drunkbaty        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "../getchar/db_getchar.h"
+#include "db_strjoin.h"
 #include "../strcpy/db_strcpy.h"
+#include <unistd.h>
 
-int	main(void)
+void	db_putstr_local(char *str)
 {
-	char	arr[100];
-	char	*addr;
-	char	*test;
-	test = malloc(4 * sizeof(int));
-	addr = &arr[0];
-	db_strcpy(arr, "Testingwordmfck");
-	printf("Size of ptr: %ld\n", sizeof(addr));
-	*test = 109;
-	while (*addr != '\0')
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
 	{
-		printf("______\n");
-		printf("Address: %lu\n", (unsigned long)addr);
-		printf("Address HEX: %p\n", addr);
-		printf("Value: %d\n", *addr);
-		printf("Sym: %c\n", *addr);
-		printf("Malloc: %d\n", *test);
-		printf("______\n");
-		addr++;
+		write(1, &str[count], 1);
+		count++;
 	}
+}
+
+int	main(char argc, char **argv)
+{
+	char	*str;
+	char	sep[10];
+
+	db_strcpy(sep, ":-)");
+	str = db_strjoin(argc - 1, argv + 1, sep);
+	db_putstr_local(str);
 	return (0);
 }

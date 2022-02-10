@@ -1,5 +1,6 @@
 - name: server bootstrap
   hosts: all
+  become: true
   vars:
     user_to_add: drunkbatya
     user_to_add_key: https://github.com/drunkbatya.keys
@@ -17,6 +18,9 @@
         dest: /etc/hosts
         line: "{{ host_ip }}{{'\t'}}{{ inventory_hostname }} {{ inventory_hostname_short }}"
         state: present
+
+    - name: disable IPv6
+      sysctl: name=net.ipv6.conf.all.disable_ipv6 value=1 sysctl_file=/etc/sysctl.d/99-ipv6.conf
 
     - name: "add user {{ user_to_add }}"
       user:
