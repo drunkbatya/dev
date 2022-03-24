@@ -1,0 +1,2 @@
+vim door_managment_files/door_configuration/door_1.conf
+2x[DOWN] 2x[w] [i] 6x[DELETE] OPEN [ESC] [:] [wq] [ENTER]

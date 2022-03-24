@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euo pipefail;
+
+# public
+FILE="${1:-""}";
+ARG="${2:-""}";
+
+if [[ -z "$FILE" ]];then
+    exit 1;
+fi
+
+# private
+OUT_FILE="${FILE/.c/}";
+
+gcc -Wall -Werror -Wextra "$FILE" -o "$OUT_FILE";
+
+./"$OUT_FILE";
+
+if [[ "$ARG" != "build" ]];then
+    rm -f "$OUT_FILE";
+fi
